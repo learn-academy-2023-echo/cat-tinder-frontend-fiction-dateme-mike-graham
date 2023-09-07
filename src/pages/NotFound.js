@@ -1,7 +1,13 @@
 import React from "react"
+import { Alert } from 'reactstrap';
 
 const NotFound = () => {
-<h1>not found</h1>
-}
+
+return (
+
+<Alert color="danger">
+Not Found!
+</Alert>
+)}
 
 export default NotFound

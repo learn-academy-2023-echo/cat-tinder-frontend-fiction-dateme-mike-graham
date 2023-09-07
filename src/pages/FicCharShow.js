@@ -1,7 +1,9 @@
 import React from "react"
 
 const Show = () => {
-<h1>Show</h1>
-}
+
+    return (
+    <h1>Show</h1>
+    )}
 
 export default Show
