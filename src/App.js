@@ -20,10 +20,10 @@ const App = () => {
     <Header />
     <Routes>
       <Route path="/" element={ <Home /> } />
-      <Route path="/FicCharIndex" element={ <FicCharIndex /> } />
-      <Route path="/FicCharShow" element={ <FicCharShow /> } />
-      <Route path="/FicCharNew" element={ <FicCharNew /> } />
-      <Route path="/FicCharEdit" element={ <FicCharEdit /> } />
+      <Route path="/ficCharindex" element={ <FicCharIndex ficChars = {ficChars}/> } />
+      <Route path="/ficharshow/:id" element={<FicCharShow ficChars = {ficChars} />} />
+      <Route path="/ficcharnew" element={ <FicCharNew /> } />
+      <Route path="/ficCharEdit" element={ <FicCharEdit /> } />
       <Route path="*" element={ <NotFound /> } />
     </Routes>
     <Footer />
