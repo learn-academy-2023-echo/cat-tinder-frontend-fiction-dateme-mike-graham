@@ -15,6 +15,10 @@ const App = () => {
 
   const [ficChars, setFicChars] = useState(mockFicChars)
 
+  const createFicChar = (ficChar) => {
+    console.log("Jason", ficChar)
+  }
+
   return (
     <>
     <Header />
@@ -22,7 +26,7 @@ const App = () => {
       <Route path="/" element={ <Home /> } />
       <Route path="/ficCharindex" element={ <FicCharIndex ficChars = {ficChars}/> } />
       <Route path="/ficharshow/:id" element={<FicCharShow ficChars = {ficChars} />} />
-      <Route path="/ficcharnew" element={ <FicCharNew /> } />
+      <Route path="/ficcharnew" element={ <FicCharNew createFicChar={createFicChar} /> } />
       <Route path="/ficCharEdit" element={ <FicCharEdit /> } />
       <Route path="*" element={ <NotFound /> } />
     </Routes>
