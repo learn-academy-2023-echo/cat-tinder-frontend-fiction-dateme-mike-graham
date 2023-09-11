@@ -7,7 +7,6 @@ const CharShow = ({ chars }) => {
     const {id} = useParams()
 
     let selectedChar = chars?.find((char) => char.id === +id)
-    console.log(selectedChar)
     return (
       <>
         <img 

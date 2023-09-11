@@ -16,12 +16,9 @@ const App = () => {
   const [chars, setChars] = useState(mockChars)
 
   const createChar = (char) => {
-    console.log("Jason", char)
   }
 
   const updateChar = (char, id) => {
-    console.log("char:", char)
-    console.log("id:", id)
   } 
 
   return (
