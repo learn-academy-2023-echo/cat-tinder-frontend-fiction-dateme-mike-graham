@@ -2,25 +2,25 @@ import React, { useState } from "react"
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap'
 import { useNavigate, useParams } from "react-router-dom"
 
-const FicCharEdit = ({ ficChars, updateFicChar }) => {
+const CharEdit = ({ chars, updateChar }) => {
     const { id } = useParams()
-        let currentFicChar = ficChars?.find((ficChar) => ficChar.id === +id)
+        let currentChar = chars?.find((char) => char.id === +id)
         
-        const [editFicChar, setEditFicChar] = useState({
-            name: currentFicChar.name,
-        age: currentFicChar.age,
-        enjoys: currentFicChar.enjoys,
-        image: currentFicChar.image
+        const [editChar, setEditChar] = useState({
+            name: currentChar.name,
+        age: currentChar.age,
+        enjoys: currentChar.enjoys,
+        image: currentChar.image
         }) 
 
         const handleChange = (e) => {
-            setEditFicChar({...editFicChar, [e.target.name]: e.target.value})
+            setEditChar({...editChar, [e.target.name]: e.target.value})
         }
 
         const navigate = useNavigate()
             const handleSubmit = () => {
-            updateFicChar(editFicChar, currentFicChar.id)
-            navigate("/ficCharindex")
+            updateChar(editChar, currentChar.id)
+            navigate("/charindex")
 }
 
 return (
@@ -47,4 +47,4 @@ return (
 </Form>
 )}
 
-export default FicCharEdit
+export default CharEdit

@@ -8,12 +8,12 @@ const Header = () => {
 return(
 <Nav>
       <NavItem>
-        <NavLink to="/ficCharindex" className="nav-link">
+        <NavLink to="/charindex" className="nav-link">
           See All the Profiles
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink to="/ficCharnew" className="nav-link">
+        <NavLink to="/charnew" className="nav-link">
           Add a New Profile
         </NavLink>
       </NavItem>

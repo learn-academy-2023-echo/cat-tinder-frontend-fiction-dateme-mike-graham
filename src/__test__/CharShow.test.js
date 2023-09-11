@@ -1,19 +1,19 @@
 import { render, screen } from '@testing-library/react';
-import FicCharShow from '../pages/FicCharShow';
+import CharShow from '../pages/CharShow';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import mockFicChars from '../mockFicChars';
+import mockChars from '../mockChars';
 
   const renderShow = () => {
     render(
-      <MemoryRouter initialEntries={["/ficharshow/1"]}>
+      <MemoryRouter initialEntries={["/charshow/1"]}>
         <Routes>
-        <Route path="/ficharshow/:id" element={<FicCharShow ficChars={mockFicChars} />} />
+        <Route path="/charshow/:id" element={<CharShow chars={mockChars} />} />
         </Routes>
       </MemoryRouter>
     )
   }
 
-describe("<FicCharShow />", () => {
+describe("<CharShow />", () => {
     it("has an image (with enjoys description ", () => {
       renderShow()
         const enjoys = screen.getByRole('heading', {

@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import FicCharNew from '../pages/FicCharNew';
+import CharNew from '../pages/CharNew';
 
-describe("<FicCharNew />", () => {
+describe("<CharNew />", () => {
   beforeEach(() => {
     render(
       <BrowserRouter>
-        <FicCharNew />
+        <CharNew />
       </BrowserRouter>
     )
   })
