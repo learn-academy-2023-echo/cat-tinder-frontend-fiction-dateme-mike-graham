@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import { useNavigate } from "react-router-dom"
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap'
 
-const FicCharNew = ({createFicChar}) => {
+const CharNew = ({createChar}) => {
 
     const [newFicChar, setNewFicChar] = useState({
         name: "",
@@ -18,8 +18,8 @@ const FicCharNew = ({createFicChar}) => {
     }
 
     const handleSubmit = () => {
-        createFicChar(newFicChar)
-        navigate("/ficCharindex")
+        createChar(newFicChar)
+        navigate("/charindex")
     }
     
     return (
@@ -82,4 +82,4 @@ const FicCharNew = ({createFicChar}) => {
       )
     }
 
-    export default FicCharNew
+    export default CharNew

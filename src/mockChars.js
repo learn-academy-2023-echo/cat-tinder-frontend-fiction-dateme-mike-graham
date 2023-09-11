@@ -1,6 +1,6 @@
 
 
-const mockFicChars = [
+const mockChars = [
 
     {
         id: 1,
@@ -26,4 +26,4 @@ const mockFicChars = [
 
 ]
 
-export default mockFicChars
+export default mockChars

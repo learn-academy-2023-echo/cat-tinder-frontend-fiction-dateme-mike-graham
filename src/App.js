@@ -2,32 +2,34 @@ import React, { useState } from "react"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
-import FicCharEdit from "./pages/FicCharEdit"
-import FicCharIndex from "./pages/FicCharIndex"
-import FicCharNew from "./pages/FicCharNew"
-import FicCharShow from "./pages/FicCharShow"
+import CharEdit from "./pages/CharEdit"
+import CharIndex from "./pages/CharIndex"
+import CharNew from "./pages/CharNew"
+import CharShow from "./pages/CharShow"
 import NotFound from "./pages/NotFound"
 import { Routes, Route } from "react-router-dom"
 
-import mockFicChars from "./mockFicChars"
+import mockChars from "./mockChars"
 
 const App = () => {
 
-  const [ficChars, setFicChars] = useState(mockFicChars)
+  const [chars, setChars] = useState(mockChars)
 
-  const createFicChar = (ficChar) => {
-    console.log("Jason", ficChar)
+  const createChar = (char) => {
   }
+
+  const updateChar = (char, id) => {
+  } 
 
   return (
     <>
     <Header />
     <Routes>
       <Route path="/" element={ <Home /> } />
-      <Route path="/ficCharindex" element={ <FicCharIndex ficChars = {ficChars}/> } />
-      <Route path="/ficharshow/:id" element={<FicCharShow ficChars = {ficChars} />} />
-      <Route path="/ficcharnew" element={ <FicCharNew createFicChar={createFicChar} /> } />
-      <Route path="/ficCharEdit" element={ <FicCharEdit /> } />
+      <Route path="/charindex" element={ <CharIndex chars = {chars}/> } />
+      <Route path="/charshow/:id" element={<CharShow chars = {chars} />} />
+      <Route path="/charnew" element={ <CharNew createChar={createChar} /> } />
+      <Route path="/charedit/:id" element={ <CharEdit chars= {chars} updateChar = {updateChar} /> } />
       <Route path="*" element={ <NotFound /> } />
     </Routes>
     <Footer />
