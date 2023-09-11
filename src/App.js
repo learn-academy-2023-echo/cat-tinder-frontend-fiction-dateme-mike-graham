@@ -19,6 +19,11 @@ const App = () => {
     console.log("Jason", ficChar)
   }
 
+  const updateFicChar = (ficChar, id) => {
+    console.log("ficChar:", ficChar)
+    console.log("id:", id)
+  } 
+
   return (
     <>
     <Header />
@@ -27,7 +32,7 @@ const App = () => {
       <Route path="/ficCharindex" element={ <FicCharIndex ficChars = {ficChars}/> } />
       <Route path="/ficharshow/:id" element={<FicCharShow ficChars = {ficChars} />} />
       <Route path="/ficcharnew" element={ <FicCharNew createFicChar={createFicChar} /> } />
-      <Route path="/ficCharEdit" element={ <FicCharEdit /> } />
+      <Route path="/ficcharedit/:id" element={ <FicCharEdit ficChars= {ficChars} updateFicChar = {updateFicChar} /> } />
       <Route path="*" element={ <NotFound /> } />
     </Routes>
     <Footer />
