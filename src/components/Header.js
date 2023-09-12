@@ -17,6 +17,11 @@ return(
           Add a New Profile
         </NavLink>
       </NavItem>
+      <NavItem>
+        <NavLink to="/" className="nav-link">
+          Home Page
+        </NavLink>
+      </NavItem>
     </Nav>
     )
 }
