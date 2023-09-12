@@ -42,7 +42,29 @@ const App = () => {
   }
 
   const updateChar = (char, id) => {
+    fetch(`http://localhost:3000/fictional_chars/${id}`, {
+      body: JSON.stringify(char),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+      .then((response) => response.json())
+      .then((payload) => readChar())
+      .catch((errors) => console.log("lets see sum:", errors))
   } 
+
+  const deleteChar = (id) => {
+    fetch(`http://localhost:3000/fictional_chars/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+      .then((response) => response.json())
+      .then((payload) => readChar())
+      .catch((errors) => console.log("lets see sum:", errors))
+  }
 
   return (
     <>
@@ -50,7 +72,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={ <Home /> } />
       <Route path="/charindex" element={ <CharIndex chars = {chars}/> } />
-      <Route path="/charshow/:id" element={<CharShow chars = {chars} />} />
+      <Route path="/charshow/:id" element={<CharShow chars = {chars} deleteChar={deleteChar} />} />
       <Route path="/charnew" element={ <CharNew createChar={createChar} /> } />
       <Route path="/charedit/:id" element={ <CharEdit chars= {chars} updateChar = {updateChar} /> } />
       <Route path="*" element={ <NotFound /> } />
